@@ -1,0 +1,27 @@
+{% extends "users/base.html" %}
+
+{% block head_content %}
+<title>Totagram Sign In</title>
+{% endblock %}
+
+{% block container %}
+
+	{% if form.errors %}
+		<p class="alert alert-danger">Usuario y/o contraseñas no válidos. Por favor intente nuevamente.</p>		
+	{% endif %}
+
+	<form method="POST" action="{% url "users:login" %}">
+		{% csrf_token %}
+		<div class="form-group">
+			<input class="form-control" type="text" placeholder="username" name="username" />
+		</div>
+		<div class="form-group">
+			<input class="form-control" type="password" placeholder="password" name="password" />
+		</div>
+
+		<button class="btn btn-primary btn-block mt-5" type="submit">Login!</button>
+	</form>
+
+	<p class="mt-4">¿No tenés una cuenta aún, chambón? <a href="{% url "users:signup" %}">Registrate acá.</a></p>
+
+{% endblock %}
