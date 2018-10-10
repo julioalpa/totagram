@@ -7,6 +7,11 @@ Generar entorno virtual
 Activarlo
 
   - source ./env/bin/activate
+
+Instalar dependencias en el entorno
+
+  - pip install django
+  - pip install Pillow
   
 Migrar DB
 
